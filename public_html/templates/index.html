@@ -1,0 +1,6 @@
+{% extends "base.html" %}
+{% block content %}
+    <div hx-get="/plan/{{ klasa }}" hx-trigger="load" hx-target=".plan_lekcji"></div>
+    <div class="plan_lekcji"></div>
+    <div hx-get="/buttons" hx-trigger="load"></div>
+{% endblock %}

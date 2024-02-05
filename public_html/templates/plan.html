@@ -1,0 +1,25 @@
+<table class="tabela">
+    {% for row in zast %}
+    <tr class="tabela_zond">
+        {% for poz in row %}
+        <td class="tabela_komurka">{{ poz }}</td>
+        {% endfor %}
+    </tr>
+    {% endfor %}
+</table>
+
+<table class="tabela">
+    <caption><h1>Plan {{ klasa.upper() }}</h1></caption>
+    <tr class="tabela_tytul">
+        {% for poz in plan_tab[1] %}
+        <th>{{poz}}</th>
+        {% endfor %}
+    </tr>
+    {% for row in plan_tab[0] %}
+    <tr class="tabela_zond">
+        {% for poz in row %}
+        <td class="tabela_komurka">{{ poz }}</td>
+        {% endfor %}
+    </tr>
+    {% endfor %}
+</table>

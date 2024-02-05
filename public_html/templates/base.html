@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <script src="https://unpkg.com/htmx.org@1.9.10"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width"> 
+    <title>Nie Zastępstwa</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body class="body">
+    <header class="headerr" hx-get="/home" hx-trigger="click" hx-target=".main">
+        <h2 class="home">HOME</h2>
+    </header>
+    <main class="main">
+    {% block content %}
+    {% endblock %}
+    </main>
+    <footer>
+        <p>Autorami projektu są Borys Furmańczak i Hubert Łazowy z 3D</p>
+    </footer>
+</body>
+</html>

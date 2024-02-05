@@ -1,0 +1,12 @@
+<div class="master">
+    {% for lit in klasy_v %}
+        <div class="flex-container">
+        {% for rok in lit%}
+            <div class="przycisk" hx-get="/plan/{{ rok }}" hx-trigger="click" hx-target=".plan_lekcji">
+                {{ rok }}
+                <img class="htmx-indicator" hx-indicator=".plan_lekcji" style="width: 2vw;" src="https://i.gifer.com/ZZ5H.gif">
+            </div>
+        {% endfor %}        
+        </div>
+    {% endfor %}
+</div>

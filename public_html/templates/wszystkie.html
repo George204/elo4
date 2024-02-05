@@ -1,0 +1,10 @@
+<table class="tabela">
+    <caption><h1>Zastępstwa {{ klasa }}</h1></caption>
+    {% for row in zast %}
+    <tr class="tabela_zond">
+        {% for poz in row %}
+        <td class="tabela_komurka">{{ poz }}</td>
+        {% endfor %}
+    </tr>
+    {% endfor %}
+</table>
