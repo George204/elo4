@@ -39,8 +39,8 @@ def zastepstwa_2(klasa,res_text):
     klasa_tabela = []
     tabela = zast_wszys(res_text)
     for row in tabela:
-        if len(row) > 1:
-            if row[1] == klasa:
+        if len(row) > 1 and len(row[1]) > 1:
+            if row[1] == klasa or row[1][:2] == klasa or row[1][0]+row[1][-1] == klasa:
                 klasa_tabela.append(row)
     return klasa_tabela
 

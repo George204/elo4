@@ -137,8 +137,19 @@ body {
   font-family: 'Sometype Mono';
   font-weight: 400;
 }
-
+.bimg {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 30%;
+  max-height:90%;
+  margin: 20px auto;
+}
 @media (920px > width) {
+  .bimg {
+    max-width: 70%;
+  }
+
   body{
     font-size: 1.6vw;
   }
