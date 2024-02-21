@@ -18,7 +18,11 @@
     {% for row in plan_tab[0] %}
     <tr class="tabela_zond">
         {% for poz in row %}
+        {% if '{' in poz %}
+        <td class="tabela_komurka"><mark>{{ poz }}</mark></td>
+        {% else %}
         <td class="tabela_komurka">{{ poz }}</td>
+        {% endif %}
         {% endfor %}
     </tr>
     {% endfor %}

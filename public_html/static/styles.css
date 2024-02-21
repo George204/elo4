@@ -2,6 +2,7 @@
 
 @media (prefers-color-scheme: light) {
     :root {
+      --highlight-1: #faa7cf;
       --text-50: #eae9fc;
       --text-100: #d4d2f9;
       --text-200: #a9a5f3;
@@ -66,6 +67,7 @@
   }
   @media (prefers-color-scheme: dark) {
     :root {
+      --highlight-1: #6e495e;
       --text-50: #040316;
       --text-100: #08062d;
       --text-200: #100c5a;
@@ -188,7 +190,10 @@ footer {
   padding-left: 3vw;
   margin-top: 2vw;
 }
-
+mark {
+  color: var(--text-950);
+  background: var(--highlight-1);
+}
 .przycisk {
   color: var(--text-900);
   border-bottom: 1px solid #777777;
