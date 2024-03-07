@@ -28,7 +28,7 @@ def plan(klasa):
     klasa = klasa.upper()
     plan, zast = zast_and_plan(klasa)
     plan_tab = (plan,kol)
-    output = render_template('plan.html',plan_tab=plan_tab,zast=zast,klasa=klasa,klasy_v=klasy_w)
+    output = render_template('plan.html',plan_tab=plan_tab,zast=zast,klasa=klasa)
     resp = make_response(output)
     expire_date =  datetime.now() + timedelta(days=90)
     resp.set_cookie('klasa', klasa, expires = expire_date)  

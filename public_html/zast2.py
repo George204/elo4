@@ -97,6 +97,7 @@ def zast_and_plan(klasa):
     loop = asyncio.new_event_loop()
     asyncio.set_event_loop(loop) 
     loop.run_until_complete(pobierz(dates, klasa, plan_l))
+    __import__('pprint').pprint(dates)
     for i, day in enumerate(dates):
         if day.content[-8::] != b'readable':
             dates[i] = zastepstwa_2(klasa, day.text)
