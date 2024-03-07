@@ -1,6 +1,6 @@
 from flask import Flask, render_template, make_response, request
 from datetime import datetime, timedelta
-from dict import *
+from zmienne import *
 from zast2 import *
 app = Flask(__name__)
 
@@ -25,7 +25,6 @@ def plan(klasa):
     if klasa == "None":
         return "<h1>Wybierz Klasę</h1>"
     kol = ["NR","Godz","Poniedziałek","Wtorek","Środa","Czwartek","Piątek"]
-    klasa = klasa.upper()
     plan, zast = zast_and_plan(klasa)
     plan_tab = (plan,kol)
     output = render_template('plan.html',plan_tab=plan_tab,zast=zast,klasa=klasa)
@@ -37,6 +36,10 @@ def plan(klasa):
 @app.route('/buttons')
 def buttons():
     return render_template("buttons.html",klasy_v=klasy_v)
- 
+
+@app.route('/nauczyciele')
+def nauczyciele():
+    return render_template("nauczyciele.html",nauczyciele=nauczyciele_l)
+
 if __name__ == '__main__':
     app.run(debug=True)

@@ -1,8 +1,9 @@
-from dict import *
+from zmienne import *
 import requests
 from bs4 import BeautifulSoup
 from datetime import datetime, timedelta
 import asyncio
+
 def plan_lekcji(res_content):
     soup = BeautifulSoup(res_content, 'html.parser')
     table = soup.find('table', {"class": "tabela"})
@@ -35,7 +36,7 @@ def zast_wszys(res_text):
                 table_data.append(row_data)
         return table_data
 
-def zastepstwa_2(klasa,res_text):
+def zastempstwa_u(klasa,res_text):
     klasa_tabela = []
     tabela = zast_wszys(res_text)
     nauczy = ""
@@ -51,11 +52,22 @@ def zastepstwa_2(klasa,res_text):
                 nauczy = row[0]
     return klasa_tabela
 
-async def pobierz(dates, klasa, plan_l):
+def zastempstwa_n(klasa,res_text):
+    klasa_tabela = []
+    tabela = zast_wszys(res_text)
+    for row in tabela:
+        if len(row) > 1 and klasa in row[3]:
+            if row[1] != '':
+                row[2] = row[1]+' '+row[2]
+            klasa_tabela.append(row)
+    return klasa_tabela
+
+
+async def pobierz(dates, numerek, plan_l):
     loop = asyncio.get_event_loop()
     url1 = 'http://www.lo4.poznan.pl/zast/z2.php?plik=http%3A%2F%2Fswojska.lo4.poznan.pl%2Fzast%2F'
     url2 = '.xls'
-    url = f"http://www.lo4.poznan.pl/plan/plan/plany/{klasy[klasa]}.html"
+    url = f"http://www.lo4.poznan.pl/plan/plan/plany/{numerek}.html"
     future1 = loop.run_in_executor(None, requests.get, url1+dates[0]+url2) 
     future2 = loop.run_in_executor(None, requests.get, url1+dates[1]+url2)
     future3 = loop.run_in_executor(None, requests.get, url1+dates[2]+url2)
@@ -90,19 +102,33 @@ def zast_and_plan(klasa):
     zastempstaw = []
     dates = ["","","","",""]
     plan_l = []
+    numerek = ""
+    uczy = False
+    if klasa in nauczyciele_l:
+        numerek = nauczyciele[klasa]
+        uczy = True
+    else:
+        numerek = klasy[klasa]
+
     for i in range(7):
         data = dziś + timedelta(days=i)
         if data.weekday() < 5:
             dates[data.weekday()] = data.strftime("%y%m%d")
+
     loop = asyncio.new_event_loop()
     asyncio.set_event_loop(loop) 
-    loop.run_until_complete(pobierz(dates, klasa, plan_l))
-    __import__('pprint').pprint(dates)
+    loop.run_until_complete(pobierz(dates, numerek, plan_l))
+
     for i, day in enumerate(dates):
         if day.content[-8::] != b'readable':
-            dates[i] = zastepstwa_2(klasa, day.text)
+            if uczy:
+                dates[i] = zastempstwa_n(klasa, day.text)
+            else:
+                dates[i] = zastempstwa_u(klasa, day.text)
+                print("nieuczy")
         else:
             dates[i] = "None"
+
     plan = plan_lekcji(plan_l[0])
     for i, day in enumerate(dates):
         if day != "None":
