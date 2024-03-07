@@ -40,6 +40,7 @@ def zastempstwa_u(klasa,res_text):
     klasa_tabela = []
     tabela = zast_wszys(res_text)
     nauczy = ""
+    klasa = klasa.upper()
     for row in tabela:
         if len(row) > 1 and len(row[1]) > 1 and len(row[1])<4 :
             if row[1] == klasa or row[1][:2] == klasa or row[1][0]+row[1][-1] == klasa:
@@ -125,7 +126,6 @@ def zast_and_plan(klasa):
                 dates[i] = zastempstwa_n(klasa, day.text)
             else:
                 dates[i] = zastempstwa_u(klasa, day.text)
-                print("nieuczy")
         else:
             dates[i] = "None"
 

@@ -39,7 +39,14 @@ def buttons():
 
 @app.route('/nauczyciele')
 def nauczyciele():
-    return render_template("nauczyciele.html",nauczyciele=nauczyciele_l)
+    columna = 0
+    col = [[],[],[]]
+    for i in sorted(nauczyciele_l):
+        col[columna].append(i)
+        columna+=1
+        if columna > 2:
+            columna =0
+    return render_template("nauczyciele.html",col=col)
 
 if __name__ == '__main__':
     app.run(debug=True)

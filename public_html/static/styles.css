@@ -203,12 +203,27 @@ mark {
   background-color: var(--secondary-300);
   text-align: center;
   display: block;
-  height: 2.5em;
-  padding: 0 1em;
-  width: 2.5em;       
+  padding: 1.5em;
 }
-
-
+.my-indicator{
+  display:none;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left:0;
+  right:0;
+  width: 40vw;
+  height: 40vw;
+  text-align: center;
+  z-index: 10;
+  top:10vh;
+}
+.htmx-request .my-indicator{
+  display:inline;
+}
+.htmx-request.my-indicator{
+  display:inline;
+}
 .master {
     display: flex;
     margin: auto;
