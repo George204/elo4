@@ -142,8 +142,6 @@ def zast_and_plan(klasa):
         if day != "None":
             for lekcja in day:
                 if lekcja[0] != '':
-                    print(plan[int(lekcja[0])-1][i+2])
-                    print("print")
                     plan[int(lekcja[0])-1][i+2].append("{" + lekcja[2] + lekcja[3] + "}")
                 else:
                     lekcja[0] = num_to_day(i)
