@@ -47,6 +47,8 @@ def zastempstwa_u(klasa,res_text):
                 if len(row[2]) == 3 or len(row[2]) == 2:
                     if row[2][1] == 'j' or row[2][0] == 'N':
                         row[2] = nauczy
+                if row[2] != '':
+                    row[2] = "grupa: " + row[2] + " "
                 klasa_tabela.append(row)
         elif len(row) == 1:
             if row[0][0] == 'p':
@@ -58,8 +60,10 @@ def zastempstwa_n(klasa,res_text):
     tabela = zast_wszys(res_text)
     for row in tabela:
         if len(row) > 1 and klasa in row[3]:
+            if row[2] != '':
+                row[2] = "grupa: " + row[2] + " "
             if row[1] != '':
-                row[2] = row[1]+' '+row[2]
+                row[2] = "klasa: " + row[1] + " " + row[2]
             klasa_tabela.append(row)
     return klasa_tabela
 
@@ -130,17 +134,17 @@ def zast_and_plan(klasa):
             dates[i] = "None"
 
     plan = plan_lekcji(plan_l[0])
+    for row in plan:
+        for i in range(len(row)):
+            posss = [row[i]]
+            row[i] = posss
     for i, day in enumerate(dates):
         if day != "None":
             for lekcja in day:
-                grupa = ''
-                if lekcja[2] != '':
-                    grupa = "grupa:" + lekcja[2] + ' '
                 if lekcja[0] != '':
-                    ststst = ""
-                    if plan[int(lekcja[0])-1][i+2] != '':
-                        ststst = " "
-                    plan[int(lekcja[0])-1][i+2] = plan[int(lekcja[0])-1][i+2] + ststst + "{"+ grupa + lekcja[3] + "}"
+                    print(plan[int(lekcja[0])-1][i+2])
+                    print("print")
+                    plan[int(lekcja[0])-1][i+2].append("{" + lekcja[2] + lekcja[3] + "}")
                 else:
                     lekcja[0] = num_to_day(i)
                     zastempstaw.append(lekcja)
