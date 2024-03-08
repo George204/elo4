@@ -3,7 +3,7 @@
 {% for nauczyciele in col %}
 <div class="flex-container">
     {% for nau in nauczyciele %}
-    <div class="przycisk" hx-get="/plan/{{ nau }}" hx-trigger="click" hx-target=".plan_lekcji" hx-indicator="#spin">
+    <div class="przycisk" hx-get="/plan/{{ nau }}" hx-trigger="click" hx-target=".plan_lekcji" hx-indicator="#spin" hx-on::after-request="window.scrollTo({top: 0, behavior: 'smooth'})" >
         {{ nau }}
     </div>
     {% endfor %}

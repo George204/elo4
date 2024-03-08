@@ -3,7 +3,7 @@
     {% for lit in klasy_v %}
         <div class="flex-container">
         {% for rok in lit%}
-            <div class="przycisk" hx-get="/plan/{{ rok }}" hx-trigger="click" hx-target=".plan_lekcji" hx-indicator="#spin">
+            <div class="przycisk" hx-get="/plan/{{ rok }}" hx-trigger="click" hx-target=".plan_lekcji" hx-indicator="#spin" hx-on::after-request="window.scrollTo({top: 0, behavior: 'smooth'})">
                 {{ rok }}
             </div>
         {% endfor %}        
