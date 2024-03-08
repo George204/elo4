@@ -207,16 +207,16 @@ mark {
 }
 .my-indicator{
   display:none;
-  position: absolute;
+  position: fixed;
   margin-left: auto;
   margin-right: auto;
   left:0;
   right:0;
-  width: 40vw;
-  height: 40vw;
+  width: 10vw;
+  height: 10vw;
   text-align: center;
   z-index: 10;
-  top:10vh;
+  top:45vh;
 }
 .htmx-request .my-indicator{
   display:inline;
