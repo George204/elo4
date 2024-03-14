@@ -43,9 +43,9 @@ def zastempstwa_u(klasa,res_text):
     klasa = klasa.upper()
     for row in tabela:
         if len(row) > 1 and len(row[1]) > 1 and len(row[1])<4 :
-            if row[1].upper() == klasa or row[1][:2].upper() == klasa or row[1][0].upper()+row[1][-1].upper() == klasa:
+            if row[1] == klasa or row[1][:2] == klasa or row[1][0]+row[1][-1] == klasa:
                 if len(row[2]) == 3 or len(row[2]) == 2:
-                    if row[2][1].lower() == 'j' or row[2][0].upper() == 'N':
+                    if row[2][1] == 'j' or row[2][0] == 'N':
                         row[2] = nauczy
                 if row[2] != '':
                     row[2] = "grupa: " + row[2] + " "
@@ -113,7 +113,7 @@ def zast_and_plan(klasa):
         numerek = nauczyciele[klasa]
         uczy = True
     else:
-        numerek = klasy[klasa.lower()]
+        numerek = klasy[klasa]
 
     for i in range(7):
         data = dziś + timedelta(days=i)
