@@ -25,9 +25,13 @@ def plan(klasa):
     if klasa == "None":
         return "<h1>Wybierz Klasę</h1>"
     kol = ["NR","Godz","Poniedziałek","Wtorek","Środa","Czwartek","Piątek"]
+    numery = ['1','2','3','4']
+    tytul = klasa
+    if tytul[0] not in numery:
+        tytul = 'p.'+tytul
     plan, zast = zast_and_plan(klasa)
     plan_tab = (plan,kol)
-    output = render_template('plan.html',plan_tab=plan_tab,zast=zast,klasa=klasa)
+    output = render_template('plan.html',plan_tab=plan_tab,zast=zast,klasa=tytul)
     resp = make_response(output)
     expire_date =  datetime.now() + timedelta(days=90)
     resp.set_cookie('klasa', klasa, expires = expire_date)  
