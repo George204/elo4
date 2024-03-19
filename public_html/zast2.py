@@ -1,4 +1,3 @@
-from pprint import pprint
 from zmienne import *
 import requests
 from bs4 import BeautifulSoup
@@ -146,7 +145,6 @@ def zast_and_plan(klasa):
                     posss[1] += j
                 else:
                     posss[0] += j
-            __import__('pprint').pprint(posss)
             row[i] = posss
     for i, day in enumerate(dates):
         if day != "None":
@@ -156,5 +154,4 @@ def zast_and_plan(klasa):
                 else:
                     lekcja[0] = num_to_day(i)
                     zastempstaw.append(lekcja)
-    __import__('pprint').pprint(plan)
     return plan, zastempstaw  
