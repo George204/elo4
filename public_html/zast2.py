@@ -1,4 +1,3 @@
-from zmienne import *
 import requests
 from bs4 import BeautifulSoup
 from datetime import datetime, timedelta
@@ -38,6 +37,7 @@ def zast_wszys(res_text):
 
 def zastempstwa_u(klasa,res_text):
     klasa_tabela = []
+    print(klasa)
     tabela = zast_wszys(res_text)
     nauczy = ""
     klasa = klasa.upper()
@@ -56,6 +56,7 @@ def zastempstwa_u(klasa,res_text):
     return klasa_tabela
 
 def zastempstwa_n(klasa,res_text):
+    klasa = klasa.split(".")[1]
     klasa_tabela = []
     tabela = zast_wszys(res_text)
     for row in tabela:
@@ -68,6 +69,7 @@ def zastempstwa_n(klasa,res_text):
     return klasa_tabela
 
 def zastempstwa_i(klasa,res_text):
+    print("bee")
     klasa_tabela = []
     tabela = zast_wszys(res_text)
     klasa = klasa.upper()
@@ -154,10 +156,10 @@ def zast_and_plan(tekst):
     dates = ["","","","",""]
     plan_l = []
     case = 0 
-    if numerek[0] == "n":
-        case = 1
     if len(klasa) > 2:
         case = 2
+    if numerek[0] == "n":
+        case = 1
 
     for i in range(7):
         data = dziś + timedelta(days=i)
@@ -171,9 +173,9 @@ def zast_and_plan(tekst):
     for i, day in enumerate(dates):
         if day.content[-8::] != b'readable':
             if case == 0:
-                dates[i] = zastempstwa_n(klasa, day.text)
-            elif case == 1:
                 dates[i] = zastempstwa_u(klasa, day.text)
+            elif case == 1:
+                dates[i] = zastempstwa_n(klasa, day.text)
             else:
                 dates[i] = zastempstwa_i(klasa, day.text)
         else:
