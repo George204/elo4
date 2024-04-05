@@ -1,6 +1,5 @@
 from flask import Flask, render_template, make_response, request
 from datetime import datetime, timedelta
-from zmienne import *
 from zast2 import *
 app = Flask(__name__)
 
@@ -27,8 +26,6 @@ def plan(klasa):
     kol = ["NR","Godz","Poniedziałek","Wtorek","Środa","Czwartek","Piątek"]
     numery = ['1','2','3','4']
     tytul = klasa
-    if tytul[0] not in numery:
-        tytul = 'p.'+tytul
     plan, zast = zast_and_plan(klasa)
     plan_tab = (plan,kol)
     output = render_template('plan.html',plan_tab=plan_tab,zast=zast,klasa=tytul)
@@ -39,8 +36,31 @@ def plan(klasa):
 
 @app.route('/buttons')
 def buttons():
-    return render_template("buttons.html",klasy_v=klasy_v)
+    przyciski = pobierz_przyciski()
+    przyciski = zrub_przyciski(przyciski)
+    klasy = []
+    last = 1
+    nauczyciele = []
+    nauczyciele_schowel = [{},{},{}]
+    schowek = {}
+    for i, cell in enumerate(przyciski[0]):
+        if last < int(cell[0]):
+            klasy.append(schowek)
+            schowek = {}
+            last = int(cell[0])
+        else:
+            schowek[cell] = przyciski[0][cell]
+    klasy.append(schowek)
+    schowek = {}
+    for i, cell in enumerate(przyciski[1]):
+        nauczyciele_schowel[i%3][cell] = przyciski[1][cell]
+    nauczyciele = nauczyciele_schowel
+    return render_template("przyciski.html",klasy = klasy,nauczyciele = nauczyciele,ind = [przyciski[2]])
 
+@app.route('/klasy')
+def buttons_klasy():
+    return render_template("buttons.html",klasy_v=klasy_v)
+    
 @app.route('/nauczyciele')
 def nauczyciele():
     columna = 0
@@ -50,6 +70,8 @@ def nauczyciele():
         columna+=1
         if columna > 2:
             columna =0
+    url = f"http://www.lo4.poznan.pl/plan/plan/lista.html"
+
     return render_template("nauczyciele.html",col=col)
 
 if __name__ == '__main__':

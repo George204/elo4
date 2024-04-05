@@ -1,0 +1,38 @@
+<h2>Klasy</h2>
+<div class="przyciski_klasy">
+    {% for wiersz in klasy %}
+        <div class="flex-container" style="flex-direction: row;">
+        {% for rok in wiersz %}
+            <div class="przycisk" hx-get="/plan/{{rok+" "+wiersz[rok]}}" hx-trigger="click" hx-target=".plan_lekcji" hx-indicator="#spin" hx-on::after-request="window.scrollTo({top: 0, behavior: 'smooth'})">
+                {{ rok }}
+            </div>
+        {% endfor %} 
+        </div>
+    {% endfor %}
+</div>
+
+<h2>Nauczyciele</h2>
+<div class="master">
+    {% for wiersz in nauczyciele %}
+        <div class="flex-container" style="flex-direction: column;">
+            {% for nau in wiersz %}
+                <div class="przycisk" hx-get="/plan/{{nau+" "+wiersz[nau]}}" hx-trigger="click" hx-target=".plan_lekcji" hx-indicator="#spin" hx-on::after-request="window.scrollTo({top: 0, behavior: 'smooth'})">
+                    {{ nau }}
+                </div>
+            {% endfor %}        
+        </div>
+    {% endfor %}
+</div>
+
+<h2>Indywidualne</h2>
+<div class="master">
+    {% for wiersz in ind %}
+        <div class="flex-container" style="flex-direction: column;">
+            {% for ucz in wiersz %}
+                <div class="przycisk" hx-get="/plan/{{ucz+" "+wiersz[ucz]}}" hx-trigger="click" hx-target=".plan_lekcji" hx-indicator="#spin" hx-on::after-request="window.scrollTo({top: 0, behavior: 'smooth'})">
+                    {{ ucz }}
+                </div>
+            {% endfor %}        
+        </div>
+    {% endfor %}
+</div>

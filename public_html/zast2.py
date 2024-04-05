@@ -67,6 +67,17 @@ def zastempstwa_n(klasa,res_text):
             klasa_tabela.append(row)
     return klasa_tabela
 
+def zastempstwa_i(klasa,res_text):
+    klasa_tabela = []
+    tabela = zast_wszys(res_text)
+    klasa = klasa.upper()
+    for row in tabela:
+        if len(row) > 1 and len(row[1]) > 1 and len(row[1])>3 :
+            if row[1] == klasa:
+                if row[2] != '':
+                    row[2] = "grupa: " + row[2] + " "
+                klasa_tabela.append(row)
+    return klasa_tabela
 
 async def pobierz(dates, numerek, plan_l):
     loop = asyncio.get_event_loop()
@@ -92,6 +103,40 @@ async def pobierz(dates, numerek, plan_l):
     dates[3] = responese4
     dates[4] = responese5
 
+def pobierz_przyciski():
+    url = f"http://www.lo4.poznan.pl/plan/plan/lista.html"
+    przyciski = requests.get(url)
+    return przyciski.content
+    
+def zrub_przyciski(przyciski):
+    output = []
+    soup = BeautifulSoup(przyciski, 'html.parser')
+    tables = soup.find_all('select')
+    for i in tables:
+        temp = {}
+        for j in i.find_all('option', value=True):
+            temp[j.get_text(strip=True)]=j['value']
+        output.append(temp)   
+    for i, tekst in enumerate(output[0]):
+        output[0][tekst] = "o" + output[0][tekst] 
+    swap = {}
+    for i, tekst in enumerate(output[1]):
+        swap[tekst.split(" ")[0]] = "n" + output[1][tekst]
+    output[1] = swap
+    
+    output.pop(2)
+    ind = {}
+    for i, tekst in enumerate(output[0]):
+        if len(tekst) > 4:
+            ind[tekst] = output[0][tekst]
+    swap = {}
+    for tekst in ind:
+        output[0].pop(tekst)
+        swap[tekst.split(" ")[0]] = ind[tekst]
+    ind = swap 
+    output.append(ind)
+    return output
+
 def num_to_day(day):
     days = {
         0:"Poniedziałek",
@@ -102,18 +147,17 @@ def num_to_day(day):
     }
     return days[day]
 
-def zast_and_plan(klasa):
+def zast_and_plan(tekst):
+    klasa, numerek = tekst.split(" ")[0], tekst.split(" ")[1] 
     dziś = datetime.now() 
     zastempstaw = []
     dates = ["","","","",""]
     plan_l = []
-    numerek = ""
-    uczy = False
-    if klasa in nauczyciele_l:
-        numerek = nauczyciele[klasa]
-        uczy = True
-    else:
-        numerek = klasy[klasa]
+    case = 0 
+    if numerek[0] == "n":
+        case = 1
+    if len(klasa) > 2:
+        case = 2
 
     for i in range(7):
         data = dziś + timedelta(days=i)
@@ -126,13 +170,14 @@ def zast_and_plan(klasa):
 
     for i, day in enumerate(dates):
         if day.content[-8::] != b'readable':
-            if uczy:
+            if case == 0:
                 dates[i] = zastempstwa_n(klasa, day.text)
-            else:
+            elif case == 1:
                 dates[i] = zastempstwa_u(klasa, day.text)
+            else:
+                dates[i] = zastempstwa_i(klasa, day.text)
         else:
             dates[i] = "None"
-
     plan = plan_lekcji(plan_l[0])
     for row in plan:
         for i in range(len(row)):

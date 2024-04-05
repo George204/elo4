@@ -234,6 +234,21 @@ mark {
     justify-content: center;
 }
 
+.przyciski_klasy {
+    display: flex;
+    margin: auto;
+    flex-direction: column;
+    justify-content: center;
+}
+.przycisk_all{
+    display: flex;
+    flex-flow: wrap;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
 .flex-container {
     display: flex;
     flex-flow: wrap;
