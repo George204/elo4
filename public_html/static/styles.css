@@ -201,12 +201,23 @@ mark {
 .przycisk {
   color: var(--text-900);
   font-weight: 600;
-  border-radius: 9px;
+  border-radius: 12px;
   background-color: var(--secondary-300);
   text-align: center;
   display: block;
   padding: 1.55em;
   margin: 0.25em;
+}
+.przycisk_klasy {
+  color: var(--text-900);
+  font-weight: 600;
+  border-radius: 12px;
+  background-color: var(--secondary-300);
+  text-align: center;
+  display: block;
+  padding: 1.55em;
+  margin: 0.25em;
+  width: 1vw;
 }
 .my-indicator{
   display:none;
@@ -239,6 +250,7 @@ mark {
     margin: auto;
     flex-direction: column;
     justify-content: center;
+    
 }
 .przycisk_all{
     display: flex;
@@ -260,31 +272,47 @@ mark {
 }
 
 .tabela_zond:nth-child(even){
-    background-color: var(--background-200);
+  background-color: var(--background-200);
 }
 .tabela_zond:nth-child(odd){
-    background-color: var(--accent-200);
+  background-color: var(--accent-200);
 }
 .tabela_tytul{
-    text-align: center;
-    color: var(--text-600);
-    font-size: 1.25em;
-    border-width: 2px;
+  text-align: center;
+  color: var(--text-600);
+  font-size: 1.25em;
+  border-width: 2px;
 }
 .tabela_komurka{
-    text-align: center;
-    padding-left: 1vw;
-    padding-right: 1vw;
-  }
+  text-align: center;
+  padding-left: 1vw;
+  padding-right: 1vw;
+  border-radius: 7px;
+}
 .tabela{
-    width: auto;
-    margin: 1vw;
-    margin-bottom: 1vw;
+  width: auto;
+  margin: 1vw;
+  margin-bottom: 1vw;
+  border-radius: 7px;
 }
 
 .plan_lekcji {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+.tabela_pozostale{
+width: auto;
+margin: 1vw;
+margin-bottom: 1vw;
+border-radius: 7px;
+background-color: #e31e1e;
+font-weight: 700;
+}
+
+.tabela_zond_pozostale{
+background-color: #e31e1e;
+color: #f6f6f6; 
 }
 

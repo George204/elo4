@@ -200,7 +200,7 @@ def zast_and_plan(tekst):
                     plan[int(lekcja[0])-1][i+2].append("{" + lekcja[2] + lekcja[3] + "}")
                 else:
                     if lekcja[0] != '':
-                        lekcja[0] = 'lekcja: ' + lekcja[0]+ ' '
-                    lekcja[0] += 'dzien: ' + num_to_day(i)
+                        lekcja[0] = 'Lekcja: ' + lekcja[0]+ ' '
+                    lekcja[0] += 'Dzień: ' + num_to_day(i)
                     zastempstaw.append(lekcja)
     return plan, zastempstaw  
