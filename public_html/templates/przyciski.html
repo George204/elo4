@@ -3,7 +3,7 @@
     {% for wiersz in klasy %}
         <div class="flex-container" style="flex-direction: row;">
         {% for rok in wiersz %}
-            <div class="przycisk" hx-get="/plan/{{rok+" "+wiersz[rok]}}" hx-trigger="click" hx-target=".plan_lekcji" hx-indicator="#spin" hx-on::after-request="window.scrollTo({top: 0, behavior: 'smooth'})">
+            <div class="przycisk_klasy" hx-get="/plan/{{rok+" "+wiersz[rok]}}" hx-trigger="click" hx-target=".plan_lekcji" hx-indicator="#spin" hx-on::after-request="window.scrollTo({top: 0, behavior: 'smooth'})">
                 {{ rok }}
             </div>
         {% endfor %} 
