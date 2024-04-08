@@ -180,7 +180,7 @@ main {
   border-width: 7px;
   border-style: solid;
   border-color: var(--primary-200);
-  border-radius: 13px;
+  border-radius: 1em;
   color: var(--text-950);
 }
 
@@ -201,7 +201,7 @@ mark {
 .przycisk {
   color: var(--text-900);
   font-weight: 600;
-  border-radius: 12px;
+  border-radius: 1em;
   background-color: var(--secondary-300);
   text-align: center;
   display: block;
@@ -211,13 +211,13 @@ mark {
 .przycisk_klasy {
   color: var(--text-900);
   font-weight: 600;
-  border-radius: 12px;
+  border-radius: 1em;
   background-color: var(--secondary-300);
   text-align: center;
   display: block;
   padding: 1.55em;
   margin: 0.25em;
-  width: 1vw;
+  width: 2vw;
 }
 .my-indicator{
   display:none;
@@ -250,7 +250,6 @@ mark {
     margin: auto;
     flex-direction: column;
     justify-content: center;
-    
 }
 .przycisk_all{
     display: flex;
@@ -287,13 +286,12 @@ mark {
   text-align: center;
   padding-left: 1vw;
   padding-right: 1vw;
-  border-radius: 7px;
+  border-radius: 0.4em;
 }
 .tabela{
   width: auto;
   margin: 1vw;
   margin-bottom: 1vw;
-  border-radius: 7px;
 }
 
 .plan_lekcji {
@@ -306,7 +304,7 @@ align-items: center;
 width: auto;
 margin: 1vw;
 margin-bottom: 1vw;
-border-radius: 7px;
+border-radius: 0.4em;
 background-color: #e31e1e;
 font-weight: 700;
 }
