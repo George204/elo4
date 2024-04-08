@@ -56,22 +56,5 @@ def buttons():
     nauczyciele = nauczyciele_schowel
     return render_template("przyciski.html",klasy = klasy,nauczyciele = nauczyciele,ind = [przyciski[2]])
 
-@app.route('/klasy')
-def buttons_klasy():
-    return render_template("buttons.html",klasy_v=klasy_v)
-    
-@app.route('/nauczyciele')
-def nauczyciele():
-    columna = 0
-    col = [[],[],[]]
-    for i in sorted(nauczyciele_l):
-        col[columna].append(i)
-        columna+=1
-        if columna > 2:
-            columna =0
-    url = f"http://www.lo4.poznan.pl/plan/plan/lista.html"
-
-    return render_template("nauczyciele.html",col=col)
-
 if __name__ == '__main__':
     app.run(debug=True)
