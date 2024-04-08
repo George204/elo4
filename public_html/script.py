@@ -48,8 +48,7 @@ def buttons():
             klasy.append(schowek)
             schowek = {}
             last = int(cell[0])
-        else:
-            schowek[cell] = przyciski[0][cell]
+        schowek[cell] = przyciski[0][cell]
     klasy.append(schowek)
     schowek = {}
     for i, cell in enumerate(przyciski[1]):
