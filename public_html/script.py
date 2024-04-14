@@ -23,7 +23,7 @@ def main():
 def plan(klasa):
     if klasa == "None":
         return "<h1>Wybierz Klasę lub Nauczyciela</h1>"
-    kol = ["NR","Godz","Poniedziałek","Wtorek","Środa","Czwartek","Piątek"]
+    kol = ["Nr","Godz","Poniedziałek","Wtorek","Środa","Czwartek","Piątek"]
     numery = ['1','2','3','4']
     tytul = klasa
     plan, zast = zast_and_plan(klasa)
