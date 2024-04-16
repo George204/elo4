@@ -37,7 +37,6 @@ def zast_wszys(res_text):
 
 def zastempstwa_u(klasa,res_text):
     klasa_tabela = []
-    print(klasa)
     tabela = zast_wszys(res_text)
     nauczy = ""
     klasa = klasa.upper()
@@ -69,7 +68,6 @@ def zastempstwa_n(klasa,res_text):
     return klasa_tabela
 
 def zastempstwa_i(klasa,res_text):
-    print("bee")
     klasa_tabela = []
     tabela = zast_wszys(res_text)
     klasa = klasa.upper()
@@ -197,6 +195,9 @@ def zast_and_plan(tekst):
         if day != "None":
             for lekcja in day:
                 if lekcja[0] != '' and int(lekcja[0]) > 0:
+                    if len(plan)-1 < int(lekcja[0]):
+                        for z in range(int(lekcja[0])-len(plan)):
+                            plan.append([[f'{len(plan)+z+1}', ''],['', ''],['', ''],['', ''],['', ''],['', ''],['', '']])
                     plan[int(lekcja[0])-1][i+2].append("{" + lekcja[2] + lekcja[3] + "}")
                 else:
                     if lekcja[0] != '':
