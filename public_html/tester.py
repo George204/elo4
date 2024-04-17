@@ -10,8 +10,8 @@ for i in mego:
     print(i,end=" ")
     print(mego[i], end=" ")
     if re.ok:
-        print("\033[32mok\033[0m")
+        print("\033[32mok",end=" ")
     else:
         for i in range(20):
-            print("\033[31mporzażka!!!!!!!\033[0m")
-
+            print("\033[31mporzażka!!!!!!!",end=" ")
+    print(re.status_code,"\033[0m")
