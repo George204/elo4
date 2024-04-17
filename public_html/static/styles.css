@@ -201,7 +201,7 @@ footer {
 }
 mark {
   color: white;
-  background-color: #21c40f;
+  background-color: rgb(180, 25, 25);
   font-weight: 900;
 }
 .przycisk {
@@ -317,12 +317,23 @@ mark {
   margin: 1vw;
   margin-bottom: 1vw;
   border-radius: 0.4em;
-  background-color: #e31e1e;
+  background-color: #b41919;
   font-weight: 700;
+  color: #f6f6f6;
+}
+
+.info_wszyscy{
+  width: auto;
+  margin: 1vw;
+  margin-bottom: 1vw;
+  border-radius: 0.4em;
+  background-color: #b41919;
+  font-weight: 700;
+  color: #f6f6f6;
 }
 
 .tabela_zond_pozostale{
-  background-color: #e31e1e;
+  background-color: #b41919;
   color: #f6f6f6;
 }
 
