@@ -56,7 +56,7 @@
   
       --accent-50: #e6f4fe;
       --accent-100: #cde9fe;
-      --accent-200: rgba(30, 169, 255, 0.75);
+      --accent-200: rgba(30, 169, 255, 0.67);
       --accent-300: #69bcfc;
       --accent-400: #37a6fb;
       --accent-500: #0590fa;
@@ -346,12 +346,13 @@ mark {
 
 ::-webkit-scrollbar {
   width: 0.75em;
+  background: transparent;
 }
 
 ::-webkit-scrollbar-track {
   border-radius: 10px;
   margin: 0.5em;
-
+  background: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
