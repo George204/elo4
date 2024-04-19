@@ -4,6 +4,7 @@
     :root {
       --highlight-1: #ffffff;
       --highlight-2: #015fb7;
+      --highlight-3: #ce1212;
       --text-0: #015fb7;
       --text-50: #000000;
       --text-100: #d4d2f9;
@@ -13,7 +14,7 @@
       --text-500: #281fe0;
       --text-600: #1ea9ff;
       --text-700: #181287;
-      --text-800: #100c5a;
+      --text-800: #ffffff;
       --text-900: #000000;
       --text-950: #272829;
   
@@ -22,7 +23,7 @@
       --background-200: #ffffff;
       --background-300: #b3b3b3;
       --background-400: #999999;
-      --background-500: #808080;
+      --background-500: #272829;
       --background-600: #666666;
       --background-700: #4d4d4d;
       --background-800: #333333;
@@ -70,7 +71,8 @@
   @media (prefers-color-scheme: dark) {
     :root {
       --highlight-1: #015fb7;
-      --highlight-2: rgba(255, 255, 255, 0);
+      --highlight-2: rgb(39, 40, 41);
+      --highlight-3: #b41919;
       --text-0: #ffffff;
       --text-50: #f6f6f6;
       --text-100: #08062d;
@@ -80,7 +82,7 @@
       --text-500: #281fe0;
       --text-600: rgb(0, 81, 201);
       --text-700: #7e78ed;
-      --text-800: #a9a5f3;
+      --text-800: #212121;
       --text-900: #f6f6f6;
       --text-950: #f6f6f6;
   
@@ -89,7 +91,7 @@
       --background-200: rgb(39, 40, 41);
       --background-300: #4d4d4d;
       --background-400: #666666;
-      --background-500: #808080;
+      --background-500: #f6f6f6;
       --background-600: #999999;
       --background-700: #b3b3b3;
       --background-800: #cccccc;
@@ -201,7 +203,7 @@ footer {
 }
 mark {
   color: white;
-  background-color: rgb(180, 25, 25);
+  background-color: var(--highlight-3);
   font-weight: 900;
 }
 .przycisk {
@@ -287,9 +289,10 @@ mark {
 }
 .tabela_tytul{
   text-align: center;
-  color: var(--text-0);
+  color: var(--text-800);
   font-size: 1.25em;
   border-width: 2px;
+  border-spacing: 0.4em;
 }
 .tabela_komurka{
   text-align: center;
@@ -303,6 +306,10 @@ mark {
   margin-bottom: 1vw;
   color: #f6f6f6;
   font-weight: 600;
+  background-color: var(--background-500);
+  border-radius: 0.4em;
+  border-collapse: separate;
+  border-spacing: 0.25vw;
 }
 
 .plan_lekcji {
