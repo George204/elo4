@@ -346,12 +346,13 @@ mark {
 
 ::-webkit-scrollbar {
   width: 0.75em;
+  background: transparent;
 }
 
 ::-webkit-scrollbar-track {
   border-radius: 10px;
   margin: 0.5em;
-
+  background: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
