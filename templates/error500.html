@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zastępstwa - Error 500</title>
+    <link rel="icon" type="image/ikonka" href="/static/ikonka.png">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
+        @media (prefers-color-scheme: light) {
+            :root {
+              --text-950: #272829;
+              --background-200: #ffffff;
+            }
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+              --text-950: #f6f6f6;
+              --background-200: rgb(39, 40, 41);
+
+            }
+        }
+
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: var(--background-200);
+            color: var(--text-950);
+            font-family: Manrope, sans-serif;
+            font-weight: 600;
+            text-align: center;
+        }
+        .code {
+            font-size: 3.25em;
+            border-radius: 0.4em;
+            background-color: #b41919;
+            font-weight: 700;
+            color: #f6f6f6;
+            padding: 0.25em;
+            margin-bottom: 1vw;
+        }
+        .exp {
+            font-size: 2em;
+            margin-bottom: 0.5vw;
+        }
+        .sorry p {
+            margin: 0.5vw;
+            font-size: 1.25em;
+        }
+    </style>
+</head>
+<body>
+    <div class="code">
+        Error 500
+    </div>
+    <div class="exp">
+        Wewnętrzny Błąd Serwera
+    </div>
+    <div class="sorry">
+        <p>Przepraszamy, coś poszło nie tak. Prosimy spróbować ponownie później.</p>
+    </div>
+</body>
+</html>
