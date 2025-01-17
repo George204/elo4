@@ -11,9 +11,10 @@
     <link rel="icon" type="image/ikonka" href="/static/ikonka.png">
 </head>
 <body class="body">
-    <header class="headerr" hx-get="/home" hx-trigger="click" hx-target=".main">
-        <h2 class="home">Strona główna</h2>
-    </header>    
+    <header class="headerr">
+        <button class="home_b" hx-get="/home" hx-trigger="click" hx-target=".main">Strona Główna</button>
+        <button class="home_b" hx-get="/wiadomosci" hx-trigger="click" hx-target=".main">Wiadomości z zastępstwami</button>
+    </header>
     <img id="spin" class="my-indicator"  src="https://i.gifer.com/ZZ5H.gif">
     <main class="main">
     {% block content %}

@@ -176,24 +176,29 @@ main {
 }
 
 
-.home_button {
-  background-color: #015fb7;
+.home_b {
   color: #f6f6f6;
+  font-family: Manrope, sans-serif;
+  font-weight: 750;
+  font-size: 2em;
+  border-radius: 0.5em;
+  border: 0.35em solid #015FB7FF;
+  background-color: #015FB7FF;
+  text-align: center;
+  display: block;
+  padding: 0.05em;
+  margin: 0.35em;
+  user-select: none;
 }
 
 .headerr {
-  background-color: #015fb7;
+  background-color: rgba(1, 95, 183, 0);
   border-width: 7px;
-  border-style: solid;
-  border-color: #015fb7;
   border-radius: 1em;
   color: #f6f6f6;
-}
-
-.home {
-  padding-left: 1vw;
-  padding-right: 1vw;
-  color: #f6f6f6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 footer {
@@ -358,4 +363,142 @@ mark {
 ::-webkit-scrollbar-thumb {
   background: #015fb7;
   border-radius: 10px;
+}
+
+.link {
+  color: #ff0724;
+  white-space: nowrap;
+  font-weight: bolder;
+  font-style: italic;
+  text-decoration: none;
+}
+
+.koniec {
+  width: auto;
+  margin: 1.5em;
+  font-size: 1em;
+  background-color: #006716;
+  border-width: 7px;
+  border-style: solid;
+  border-color: #006716;
+  border-radius: 1em;
+  color: #f6f6f6;
+  text-align: center;
+  display: block;
+  padding: 0.55em;
+}
+
+.red {
+  color: red;
+  font-weight: bold;
+}
+
+.info_wiadomosci {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 75%;
+}
+
+.tytul {
+  font-size: 2.5em;
+  margin: 0;
+  font-weight: bold;
+}
+
+.instrukacja_tytul {
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.info_wiadomosci_tekst {
+  font-size: 1.25em;
+}
+
+.konto {
+  color: #f6f6f6;
+  font-weight: 750;
+  border: solid 1px #272829;
+  border-radius: 0.5em;
+  background-color: #272829;
+  text-align: center;
+  padding: 0.5em;
+  margin: 0.25em;
+  user-select: none;
+  font-size: 0.75em;
+  margin-top: 0.5em;
+}
+
+.konto_tekst {
+  color: #f6f6f6;
+  user-select: none;
+  text-decoration: none;
+}
+
+.instrukacja {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.instrukacja > div {
+  flex: 1 1 calc(33.333% - 1rem);
+  max-width: calc(33.333% - 1rem);
+  box-sizing: border-box;
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.krok_1, .krok_2, .krok_3 {
+  justify-content: center;
+  color: #f6f6f6;
+  font-weight: bold;
+  font-size: 2em;
+  background-color: #015eb6;
+  display: flex;
+  flex-direction: column;
+  padding: 0.25em;
+  margin: 0;
+}
+
+.opis {
+  margin-top: 0.5em;
+  font-size: 0.75em;
+  background-color: white;
+  color: black;
+  border-radius: 0.4em;
+  height: auto;
+  padding: 0.5em;
+  flex: 1;
+  align-content: center;
+}
+
+@media (max-width: 1100px) {
+  .instrukacja > div {
+      flex: 1 1 100%;
+      max-width: 100%;
+  }
+}
+
+.nick {
+  margin-bottom: 0;
+  text-align: center;
+}
+
+.test {
+  font-weight: bold;
+  width: auto;
+  margin: 1.5em;
+  font-size: 1em;
+  background-color: #ff6c00;
+  border-width: 7px;
+  border-style: solid;
+  border-color: #ff6c00;
+  border-radius: 1em;
+  color: #f6f6f6;
+  text-align: center;
+  display: block;
+  padding: 0.55em;
 }
