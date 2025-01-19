@@ -5,67 +5,12 @@
       --highlight-1: #ffffff;
       --highlight-2: #015fb7;
       --highlight-3: #ce1212;
-      --text-0: #015fb7;
       --text-50: #000000;
-      --text-100: #d4d2f9;
-      --text-200: #a9a5f3;
-      --text-300: #7e78ed;
-      --text-400: #534be7;
-      --text-500: #281fe0;
-      --text-600: #1ea9ff;
-      --text-700: #181287;
       --text-800: #ffffff;
-      --text-900: #000000;
       --text-950: #272829;
-  
-      --background-50: #f2f2f2;
-      --background-100: #e6e6e6;
+
       --background-200: #ffffff;
-      --background-300: #b3b3b3;
-      --background-400: #999999;
       --background-500: #272829;
-      --background-600: #666666;
-      --background-700: #4d4d4d;
-      --background-800: #333333;
-      --background-900: #1a1a1a;
-      --background-950: #0d0d0d;
-  
-      --primary-50: #e5f5ff;
-      --primary-100: #1ea9ff;
-      --primary-200: #1ea9ff;
-      --primary-300: #66c2ff;
-      --primary-400: #33adff;
-      --primary-500: #0099ff;
-      --primary-600: #007acc;
-      --primary-700: #005c99;
-      --primary-800: #003d66;
-      --primary-900: #001f33;
-      --primary-950: #000f1a;
-  
-      --secondary-50: #e6f2ff;
-      --secondary-100: #cde5fe;
-      --secondary-200: #9bcafd;
-      --secondary-300: #1ea9ff;
-      --secondary-400: #3696fc;
-      --secondary-500: #047bfb;
-      --secondary-600: #0363c9;
-      --secondary-700: #024a97;
-      --secondary-800: #023164;
-      --secondary-900: #011932;
-      --secondary-950: #000c19;
-  
-      --accent-50: #e6f4fe;
-      --accent-100: #cde9fe;
-      --accent-200: rgba(30, 169, 255, 0.67);
-      --accent-300: #69bcfc;
-      --accent-400: #37a6fb;
-      --accent-500: #0590fa;
-      --accent-600: #0473c8;
-      --accent-700: #035696;
-      --accent-800: #023a64;
-      --accent-900: #011d32;
-      --accent-950: #010e19;
-  
     }
   }
   @media (prefers-color-scheme: dark) {
@@ -73,67 +18,12 @@
       --highlight-1: #015fb7;
       --highlight-2: rgb(39, 40, 41);
       --highlight-3: #b41919;
-      --text-0: #ffffff;
       --text-50: #f6f6f6;
-      --text-100: #08062d;
-      --text-200: #100c5a;
-      --text-300: #181287;
-      --text-400: #2018b4;
-      --text-500: #281fe0;
-      --text-600: rgb(0, 81, 201);
-      --text-700: #7e78ed;
       --text-800: #212121;
-      --text-900: #f6f6f6;
       --text-950: #f6f6f6;
-  
-      --background-50: #0d0d0d;
-      --background-100: #1a1a1a;
-      --background-200: rgb(39, 40, 41);
-      --background-300: #4d4d4d;
-      --background-400: #666666;
-      --background-500: #f6f6f6;
-      --background-600: #999999;
-      --background-700: #b3b3b3;
-      --background-800: #cccccc;
-      --background-900: #e6e6e6;
-      --background-950: #f2f2f2;
-  
-      --primary-50: #000f1a;
-      --primary-100: #003686;
-      --primary-200: #003686;
-      --primary-300: #005c99;
-      --primary-400: #007acc;
-      --primary-500: #0099ff;
-      --primary-600: #33adff;
-      --primary-700: #66c2ff;
-      --primary-800: #99d6ff;
-      --primary-900: #ccebff;
-      --primary-950: #e5f5ff;
-  
-      --secondary-50: #000c19;
-      --secondary-100: #011932;
-      --secondary-200: #023164;
-      --secondary-300: #003686;
-      --secondary-400: #0363c9;
-      --secondary-500: #047bfb;
-      --secondary-600: #3696fc;
-      --secondary-700: #68b0fd;
-      --secondary-800: #9bcafd;
-      --secondary-900: #cde5fe;
-      --secondary-950: #e6f2ff;
-  
-      --accent-50: #010e19;
-      --accent-100: #011d32;
-      --accent-200: rgba(0, 54, 133, 0.75);
-      --accent-300: #035696;
-      --accent-400: #0473c8;
-      --accent-500: #0590fa;
-      --accent-600: #37a6fb;
-      --accent-700: #69bcfc;
-      --accent-800: #9bd3fd;
-      --accent-900: #cde9fe;
-      --accent-950: #e6f4fe;
-  
+
+      --background-200:  #272829;
+      --background-500: #ffffff;
     }
   }
 
@@ -371,21 +261,6 @@ mark {
   font-weight: bolder;
   font-style: italic;
   text-decoration: none;
-}
-
-.koniec {
-  width: auto;
-  margin: 1.5em;
-  font-size: 1em;
-  background-color: #006716;
-  border-width: 7px;
-  border-style: solid;
-  border-color: #006716;
-  border-radius: 1em;
-  color: #f6f6f6;
-  text-align: center;
-  display: block;
-  padding: 0.55em;
 }
 
 .red {
