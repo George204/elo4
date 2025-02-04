@@ -15,6 +15,12 @@
         <button class="home_b" hx-get="/home" hx-trigger="click" hx-target=".main">Strona Główna</button>
         <button class="home_b" hx-get="/wiadomosci" hx-trigger="click" hx-target=".main">Wiadomości z zastępstwami</button>
     </header>
+    <div class="dodatkowe_informacje">
+        <div class="wiadomosci">
+        Uwaga: Udostępniliśmy nową funkcję. Więcej informacji w zakładce "Wiadomości z zastępstwami".
+        </div>
+    </div>
+
     <img id="spin" class="my-indicator"  src="https://i.gifer.com/ZZ5H.gif">
     <main class="main">
     {% block content %}
