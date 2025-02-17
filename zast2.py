@@ -3,6 +3,9 @@ from bs4 import BeautifulSoup
 from datetime import datetime, timedelta
 import asyncio
 
+import re
+
+
 def plan_lekcji(res_content):
     soup = BeautifulSoup(res_content, 'html.parser')
     table = soup.find('table', {"class": "tabela"})
@@ -167,7 +170,6 @@ def zast_and_plan(tekst):
     loop = asyncio.new_event_loop()
     asyncio.set_event_loop(loop) 
     loop.run_until_complete(pobierz(dates, numerek, plan_l))
-
     for i, day in enumerate(dates):
         if day.content[-8::] != b'readable':
             if case == 0:
@@ -204,4 +206,12 @@ def zast_and_plan(tekst):
                         lekcja[0] = 'Lekcja: ' + lekcja[0]+ ' '
                     lekcja[0] += 'Dzień: ' + num_to_day(i)
                     zastempstaw.append(lekcja)
-    return plan, zastempstaw  
+
+    plan_skr = []
+    skr_godz = ['8.00-8.30','8.40-9.10', '9.20-9.50', '10.00-10.30', '10.40-11.10', '11.15-11.45', '11.50-12.20', '12.25-12.55', '13.00-13.30', '13.35-14.05']
+    for i, wiersz in enumerate(plan):
+        wiersz.append([f'{i + 1}', ''])
+        wiersz.append([skr_godz[i], ''])
+        plan_skr.append(wiersz)
+
+    return plan_skr, zastempstaw
