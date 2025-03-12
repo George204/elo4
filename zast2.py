@@ -210,8 +210,7 @@ def zast_and_plan(tekst):
     plan_skr = []
     skr_godz = ['8.00-8.30','8.40-9.10', '9.20-9.50', '10.00-10.30', '10.40-11.10', '11.15-11.45', '11.50-12.20', '12.25-12.55', '13.00-13.30', '13.35-14.05']
     for i, wiersz in enumerate(plan):
-        wiersz.append([f'{i + 1}', ''])
-        wiersz.append([skr_godz[i], ''])
+        wiersz[1].append(f'\n[{skr_godz[i]}]')
         plan_skr.append(wiersz)
 
     return plan_skr, zastempstaw
