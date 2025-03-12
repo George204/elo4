@@ -32,7 +32,9 @@
             <td class="tabela_komurka">
             {% for word in poz %}
                 {% if '{' in word %}
-                    <mark>{{ word }}</mark><br>
+                    <mark class="oznaczenie_zastepstwo">{{ word }}</mark><br>
+                {% elif '[' in word %}
+                    <mark class="lekcja_skrocona">{{ word }}</mark><br>
                 {% else %}
                     {{ word }}
                     {% if word != '' %}
@@ -45,3 +47,4 @@
     </tr>
     {% endfor %}
 </table>
+<p class="info_skrocone">*Godziny w nawiasach kwadratowych <span class="jasny">[...]</span> dotyczą czasu trwania lekcji skróconych.</p>

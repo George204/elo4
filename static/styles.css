@@ -5,6 +5,7 @@
       --highlight-1: #ffffff;
       --highlight-2: #015fb7;
       --highlight-3: #ce1212;
+      --highlight-4: #5fbdff;
       --text-50: #000000;
       --text-800: #ffffff;
       --text-950: #272829;
@@ -18,6 +19,7 @@
       --highlight-1: #015fb7;
       --highlight-2: rgb(39, 40, 41);
       --highlight-3: #b41919;
+      --highlight-4: #5fbdff;
       --text-50: #f6f6f6;
       --text-800: #212121;
       --text-950: #f6f6f6;
@@ -96,7 +98,7 @@ footer {
   padding-left: 3vw;
   margin-top: 2vw;
 }
-mark {
+.oznaczenie_zastepstwo {
   color: white;
   background-color: var(--highlight-3);
   font-weight: 900;
@@ -399,4 +401,18 @@ mark {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.lekcja_skrocona {
+  color: var(--highlight-4);
+  font-style: italic;
+  background-color: transparent;
+  font-weight: 900;
+}
+
+.jasny {
+  color: var(--highlight-4);
+  font-style: italic;
+  background-color: transparent;
+  font-weight: 900;
 }
