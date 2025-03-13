@@ -56,9 +56,9 @@ def buttons():
     nauczyciele = nauczyciele_schowel
     return render_template("przyciski.html", klasy=klasy, nauczyciele=nauczyciele, ind=[przyciski[2]])
 
-@app.route('/wiadomosci')
-def formularz():
-    return render_template('wiadomosci.html')
+#@app.route('/wiadomosci')
+#def formularz():
+#    return render_template('wiadomosci.html')
 
 
 if __name__ == '__main__':
