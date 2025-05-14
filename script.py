@@ -42,6 +42,7 @@ def buttons():
     last = 1
     nauczyciele = []
     nauczyciele_schowel = [{}, {}, {}]
+    indywidualne_schowel = [{}, {}, {}, {}]
     schowek = {}
     for i, cell in enumerate(przyciski[0]):
         if last < int(cell[0]):
@@ -54,11 +55,10 @@ def buttons():
     for i, cell in enumerate(przyciski[1]):
         nauczyciele_schowel[i % 3][cell] = przyciski[1][cell]
     nauczyciele = nauczyciele_schowel
-    return render_template("przyciski.html", klasy=klasy, nauczyciele=nauczyciele, ind=[przyciski[2]])
-
-#@app.route('/wiadomosci')
-#def formularz():
-#    return render_template('wiadomosci.html')
+    for i, cell in enumerate(przyciski[2]):
+        indywidualne_schowel[i % 4][cell] = przyciski[2][cell]
+    indywidualne = indywidualne_schowel
+    return render_template("przyciski.html", klasy=klasy, nauczyciele=nauczyciele, ind=indywidualne)
 
 
 if __name__ == '__main__':
